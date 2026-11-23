@@ -1,0 +1,6 @@
+• Login Email: admin@university.edu
+• Password: password123
+
+user:
+• Login Email: ralph@gmail.com
+• Password: ralph123
