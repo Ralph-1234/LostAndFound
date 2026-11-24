@@ -6,9 +6,11 @@
     <title>University of Baguio - Lost & Found</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+<body class="bg-[#C6CFE1] text-gray-800 min-h-screen flex flex-col">
+    <!-- bg-red-100 -->
     <!-- Navigation -->
     <nav class="bg-gray-600 text-white shadow">
+        <!-- bg-gray-900 or bg-[#4C4C4C] -->
         <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
             <a href="{{ route('home') }}" class="text-xl font-bold tracking-tight">
                 U<span class="text-red-400">B Lost & Found</span>
@@ -23,23 +25,28 @@
                     <!-- <a href="{{ route('items.create') }}" class="bg-green-500 hover:bg-green-600 text-blue-950 font-semibold px-1.5 py-1 rounded">
                         + Report Item
                     </a> -->
-                    <a href="{{ route('claims.my') }}" class="hover:text-red-300 hover:underline">My Claims</a>
+                    <a href="{{ route('claims.my') }}" class="hover:text-red-300 hover:underline">Claims</a>
                     <a href="{{ route('profile.edit') }}" class="hover:text-red-300 hover:underline">Profile</a>
 
                     @if(auth()->user()->is_admin)
-                        <a href="{{ route('admin.dashboard') }}" class="bg-red-600 hover:bg-red-700 px-3 py-1.5 rounded">
-                            Admin Panel
+                        <a href="{{ route('admin.dashboard') }}" class="bg-red-600 hover:bg-red-300 hover:text-black px-2 py-1.5 rounded">
+                            Dashboard
                         </a>
                     @endif
 
                     <form method="POST" action="{{ route('logout') }}" class="inline">
                         @csrf
-                        <button type="submit" class="text-gray-300 hover:text-white">Logout</button> 
+                        
+                        @if(auth()->user()->is_admin)
+                            <button type="submit" class="text-gray-300 hover:text-white">Logout ({{ auth()->user()->name }})</button> 
                         <!--Logout ({{ auth()->user()->name }}) -->
+                        @else
+                            <button type="submit" class="text-gray-300 hover:text-white">Logout</button> 
+                        @endif
                     </form>
                 @else
                     <a href="{{ route('login') }}" class="hover:text-red-300">Login</a>
-                    <a href="{{ route('register') }}" class="bg-white text-blue-900 px-3 py-1.5 rounded font-semibold hover:bg-red-300">Register</a>
+                    <a href="{{ route('register') }}" class="bg-white text-gray-900 px-3 py-1.5 rounded font-semibold hover:bg-red-300">Register</a>
                 @endauth
             </div>
         </div>
@@ -77,7 +84,8 @@
         @yield('content')
     </main>
 
-    <footer class="bg-gray-900 text-gray-400 text-center py-4 text-sm">
+    <footer class="bg-gray-600 text-white text-center py-4 text-sm">
+            <!-- bg-gray-900 -->
         &copy; {{ date('Y') }} University of Baguio Lost & Found Management System
     </footer>
 </body>

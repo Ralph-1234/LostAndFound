@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-<h1 class="text-2xl font-bold text-gray-900 mb-6">My Claim Requests</h1>
+<h1 class="text-2xl font-bold text-gray-900 mb-6">My Claim Requests (Found Items)</h1>
 
 <div class="bg-white rounded-lg shadow-sm border overflow-x-auto">
     <table class="w-full text-left border-collapse">

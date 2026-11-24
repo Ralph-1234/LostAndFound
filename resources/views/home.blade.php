@@ -2,8 +2,8 @@
 
 @section('content')
 <!-- Hero Section -->
-<div class="bg-white rounded-xl p-8 mb-8 text-center">
-    <h1 class="text-3xl md:text-4xl font-bold text-blue-950 mb-3">University of Baguio Lost & Found Portal</h1>
+<div class="rounded-xl p-8 mb-8 text-center">
+    <h1 class="text-3xl md:text-4xl font-bold text-blue-950 mb-3">University of Baguio Lost & Found</h1>
     <p class="text-gray-600 max-w-2xl mx-auto mb-6">
         Lost something on campus or found an unattended item? Report it here to help reunite belongings with their rightful owners.
     </p>
@@ -11,7 +11,7 @@
         <a href="{{ route('items.create') }}" class="bg-red-700 hover:bg-red-800 text-white px-6 py-3 rounded-lg font-semibold">
             Report Lost / Found Item
         </a>
-        <a href="{{ route('items.found') }}" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-lg font-semibold">
+        <a href="{{ route('items.found') }}" class="bg-gray-200 hover:bg-gray-600 hover:text-white px-6 py-3 rounded-lg font-semibold">
             Browse Found Items
         </a>
     </div>
@@ -43,11 +43,11 @@
         @forelse($recentFound as $item)
             <div class="bg-white rounded-lg shadow-sm border overflow-hidden">
                 @if($item->image_path)
-                    <img src="{{ asset('storage/' . $item->image_path) }}" alt="{{ $item->title }}" class="w-full h-40 object-cover">
+                    <img src="{{ asset('storage/' . $item->image_path) }}" class="w-full h-40 object-cover">
                 @else
-                    <div class="w-full h-40 bg-gray-200 flex items-center justify-center text-gray-400 text-sm">No Image</div>
+                    <div class="w-full h-40 bg-gray-100 flex items-center justify-center text-gray-400 text-sm">No Image</div>
                 @endif
-                <div class="p-4">
+                <div class="p-3">
                     <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-semibold">{{ $item->category }}</span>
                     <h3 class="font-bold text-lg mt-1">{{ $item->title }}</h3>
                     <p class="text-sm text-gray-500">📍 {{ $item->location }}</p>
@@ -70,11 +70,11 @@
         @forelse($recentLost as $item)
             <div class="bg-white rounded-lg shadow-sm border overflow-hidden">
                 @if($item->image_path)
-                    <img src="{{ asset('storage/' . $item->image_path) }}" alt="{{ $item->title }}" class="w-full h-40 object-cover">
+                    <img src="{{ asset('storage/' . $item->image_path) }}" class="w-full h-40 object-cover">
                 @else
-                    <div class="w-full h-40 bg-gray-200 flex items-center justify-center text-gray-400 text-sm">No Image</div>
+                    <div class="w-full h-40 bg-gray-100 flex items-center justify-center text-gray-400 text-sm">No Image</div>
                 @endif
-                <div class="p-4">
+                <div class="p-3">
                     <span class="text-xs bg-red-100 text-red-800 px-2 py-0.5 rounded font-semibold">{{ $item->category }}</span>
                     <h3 class="font-bold text-lg mt-1">{{ $item->title }}</h3>
                     <p class="text-sm text-gray-500">📍 {{ $item->location }}</p>

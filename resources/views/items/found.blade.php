@@ -23,7 +23,7 @@
             <option value="resolved" {{ request('status') === 'resolved' ? 'selected' : '' }}>Resolved / Claimed</option>
         </select>
 
-        <button type="submit" class="bg-blue-900 text-white px-4 py-2 rounded-lg text-sm font-semibold">Search</button>
+        <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-500">Search</button>
     </form>
 </div>
 
@@ -58,7 +58,7 @@
                         @if(auth()->id() !== $item->user_id)
                             <button type="button"
                                     onclick="document.getElementById('claim-form-{{ $item->id }}').classList.toggle('hidden')"
-                                    class="w-full bg-blue-900 hover:bg-blue-800 text-white py-2 rounded text-sm font-semibold">
+                                    class="w-full bg-gray-500 hover:bg-red-500 text-white py-2 rounded text-sm font-semibold">
                                 Claim This Item
                             </button>
 
@@ -82,7 +82,7 @@
                             <span class="block text-center text-xs text-gray-500">You reported this item. Waiting for owner claims.</span>
                         @endif
                     @else
-                        <a href="{{ route('login') }}" class="block text-center text-sm text-blue-700 font-semibold hover:underline">
+                        <a href="{{ route('login') }}" class="block text-center text-sm text-red-700 font-semibold hover:underline">
                             Login to Claim Item
                         </a>
                     @endauth

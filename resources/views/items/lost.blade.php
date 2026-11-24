@@ -23,7 +23,7 @@
             <option value="resolved" {{ request('status') === 'resolved' ? 'selected' : '' }}>Resolved / Claimed</option>
         </select>
 
-        <button type="submit" class="bg-red-900 text-white px-4 py-2 rounded-lg text-sm font-semibold">Search</button>
+        <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-500">Search</button>
     </form>
 </div>
 

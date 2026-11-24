@@ -3,7 +3,7 @@
 @section('content')
 <div class="flex justify-between items-center mb-6">
     <h1 class="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
-    <a href="{{ route('admin.claims') }}" class="bg-amber-500 hover:bg-amber-600 text-blue-950 font-semibold px-4 py-2 rounded-lg text-sm">
+    <a href="{{ route('admin.claims') }}" class="bg-amber-100 hover:bg-amber-200 text-amber-950 border-amber-400 font-semibold px-4 py-2 rounded-lg text-sm">
         Manage Claim Requests ({{ $stats['pending_claims'] }} Pending)
     </a>
 </div>
@@ -58,7 +58,7 @@
                     <td class="p-4">{{ $item->location }}</td>
                     <td class="p-4">{{ $item->user->name }}</td>
                     <td class="p-4 uppercase text-xs font-semibold">{{ $item->status }}</td>
-                    <td class="p-4 flex items-center gap-3">
+                    <td class="p-4 flex items-center whitespace-nowrap gap-3">
                         <!-- Toggle Status (Open <-> Resolved) -->
                         <form method="POST" action="{{ route('items.status', $item) }}">
                             @csrf

@@ -55,11 +55,11 @@
             <input type="file" name="image" accept="image/*" class="block w-full text-sm text-gray-600 border border-gray-300 rounded-lg cursor-pointer bg-gray-50
                     file:mr-4 file:py-2 file:px-4 file:rounded-l-lg file:border-0
                     file:text-sm file:font-semibold file:bg-gray-600 file:text-white
-                     hover:file:bg-red-800">
+                     hover:file:bg-red-400">
              <p class="mt-1 text-xs text-gray-500">PNG, JPG, or WEBP (Max 2MB)</p>
         </div>
 
-        <button type="submit" class="w-full bg-gray-600 hover:bg-red-800 text-white font-semibold py-3 rounded-lg">
+        <button type="submit" class="w-full bg-gray-600 hover:bg-red-400 text-white font-semibold py-3 rounded-lg">
             Submit Report
         </button>
     </form>
